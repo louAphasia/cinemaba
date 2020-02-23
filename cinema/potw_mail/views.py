@@ -3,7 +3,7 @@ from cinema.settings import EMAIL_HOST_USER
 from . import forms
 from django.core.mail import send_mail
 
-#DataFlair #Send Email
+
 def confirm(request):
     conf = forms.ConfirmMail()
     if request.method == 'POST':
