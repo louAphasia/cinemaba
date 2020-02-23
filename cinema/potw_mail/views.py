@@ -8,8 +8,8 @@ def confirm(request):
     conf = forms.ConfirmMail()
     if request.method == 'POST':
         sub = forms.ConfirmMail(request.POST)
-        subject = 'Welcome to DataFlair'
-        message = 'Hope you are enjoying your Django Tutorials'
+        subject = 'Potwierdzenie rezerwacji biletow'
+        message = 'Zarezerwowales bilety w kiniem ... proszę zglosic sie najpozniej 15 minut przed seansem'
         recepient = str(sub['Email'].value())
         send_mail(subject,
             message, EMAIL_HOST_USER, [recepient], fail_silently = False)
