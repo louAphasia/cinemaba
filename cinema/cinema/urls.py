@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('worker/', include('worker.urls')),
     path('client/', include('client.urls')),
+    path('mail/', include('potw_mail.urls')),
 ]

@@ -33,11 +33,19 @@ INSTALLED_APPS = [
     'worker.apps.WorkerConfig',
     'django.contrib.admin',
     'django.contrib.auth',
+    'potw_mail.apps.PotwMailConfig',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'testmail@gmail.com'  # testowe
+EMAIL_HOST_PASSWORD = 'ppp'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
