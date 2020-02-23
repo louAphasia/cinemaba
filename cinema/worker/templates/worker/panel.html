@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Panel</title>
-</head>
-<body>
-<ul>
-{#    <li><p><a href="{% url 'worker-movie-list' %}">Lista filmów</a></p></li>#}
-{#    <li><p><a href="{% url 'worker-client-list' %}">Lista klientów</a></p></li>#}
-{#    <li><p><a href="{% url 'worker-showtime-list' %}">Lista seansów</a></p></li>#}
-{#    <li><p><a href="{% url 'worker-reservation-list' %}">Lista rezerwacji</a></p></li>#}
-</ul>
-{{ current_time }}
-</body>
-</html>
+{% extends 'worker/base.html' %}
+{% block content %}
+    <br><br>
+    {% if user.get_username == 'admin' %}
+        <a href="{% url 'adduser-create-worker' %}">Dodaj użytkownika</a><br>
+    {% endif %}
+    <a href="{% url 'reservation-worker' %}">Rezerwacje</a><br>
+    <a href="{% url 'showtime-list-worker' %}">Seanse</a><br>
+    <a href="{% url 'movie-list-worker' %}">Filmy</a><br>
+    <a href="{% url 'tickettype-list-worker' %}">Typy biletów</a><br>
+    Opłacanie rezerwacji<br>
+{% endblock %}
